@@ -1,4 +1,4 @@
-console.log('main.js loaded');
+//console.log('main.js loaded');
 
 //Video playback error catch
 document.addEventListener('DOMContentLoaded', function() {
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Event listeners set up for hamburger menu');
 });
   
-// Form submission handling
+//Form submission handling
 const form = document.getElementById('contact-form');
 const confirmationMessage = document.getElementById('confirmationMessage');
   
@@ -19,28 +19,28 @@ form.addEventListener('submit', function(event) {
     console.log('Form Submitted');
     event.preventDefault(); // Prevent the form from actually submitting
   
-    // Simulate form submission (you would typically send data to a server here)
+    //Simulated. Form will not actually submit
     setTimeout(function() {
-        // Hide the form
+        //Hide the form
         form.style.display = 'none';
         
-        // Show the confirmation message
+        // how the confirmation message
         confirmationMessage.style.display = 'block'; 
         
-        // Optionally, reset the form fields
+        //Reset the form fields
         form.reset();
         
-        // Optionally, hide the message and show the form again after a delay
+        //Hide the message and show the form again after a delay
         setTimeout(function() {
           confirmationMessage.style.display = 'none';
           form.style.display = 'block';
-        }, 5000); // Hide after 5 seconds
-      }, 1000); // Simulate a 1-second delay for "sending" the message
-    });
+        }, 5000); //Hide after 5 seconds
+      }, 1000); //Simulated delay for "sending" the message
+});
 
 
-
-  document.addEventListener('DOMContentLoaded', function() {
+//Function for smooth scrolling when using nav page links
+document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.nav-links a');
     const headerHeight = document.querySelector('header').offsetHeight;
 
@@ -59,7 +59,7 @@ form.addEventListener('submit', function(event) {
     });
 });
 
-
+//Function for cta buttons to scroll page to the sign-up form
 document.addEventListener('DOMContentLoaded', function() {
     const ctaButtons = document.querySelectorAll('.scroll-to-form');
     const header = document.querySelector('header');
@@ -79,9 +79,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-
+//Testimonial slider carousel setup
 document.addEventListener('DOMContentLoaded', function() {
-    console.log("Testimonial script loaded");
+    //console.log("Testimonial script loaded");
     const testimonials = [
         {
             name: "Tom, 52",
@@ -103,7 +103,6 @@ document.addEventListener('DOMContentLoaded', function() {
             content: "I was nervous about starting martial arts in my 30s, but Kaze-Kai made me feel welcome from day one. The instructors break down complex moves, making learning fun and achievable. The breathing techniques I've learned have even helped me stay calm during stressful situations at work.",
             image: "images/testimonial_lisa.jpg"
         }
-        // Add more testimonials as needed
     ];
 
     let currentIndex = 0;
@@ -198,35 +197,37 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+//Theme toggle function
 document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('theme-toggle');
     const icon = themeToggle.querySelector('i');
     const body = document.body;
 
-    // Set initial theme
+    //Sets initial theme
     body.classList.add('light');
 
     themeToggle.addEventListener('click', function() {
         if (body.classList.contains('light')) {
-            // Switch to dark theme
+            //Switch to dark theme
             body.classList.replace('light', 'dark');
             icon.classList.replace('fa-moon', 'fa-sun');
         } else {
-            // Switch to light theme
+            //Switch to light theme
             body.classList.replace('dark', 'light');
             icon.classList.replace('fa-sun', 'fa-moon');
         }
 
-        // Update the toggle button colors
+        //Updates the toggle button colors
         updateToggleColors();
     });
-
+    //Function to swap theme toggle icon colors
     function updateToggleColors() {
         const computedStyle = getComputedStyle(body);
         themeToggle.style.backgroundColor = computedStyle.getPropertyValue('--secondary-color').trim();
         icon.style.color = computedStyle.getPropertyValue('--main-color').trim();
     }
 
-    // Initial color setup
+    //Initial color setup
     updateToggleColors();
 });
+
